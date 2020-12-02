@@ -18,4 +18,9 @@
         android:name="com.example.android.mycats.CatsFragment"
         android:label="fragment_cats"
         tools:layout="@layout/fragment_cats" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.android.mycats.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
 </navigation>
