@@ -49,15 +49,15 @@ class CatsFragment : Fragment() {
     }
 
     private fun displaySubscribersList(){
-        catViewModel.subscribers.observe(viewLifecycleOwner, Observer {
+        catViewModel.cats.observe(viewLifecycleOwner, Observer {
             Log.i("MYTAG",it.toString())
             adapter.setList(it)
             adapter.notifyDataSetChanged()
         })
     }
 
-    private fun listItemClicked(subscriber: Cat){
+    private fun listItemClicked(cat: Cat){
         //Toast.makeText(this,"selected name is ${subscriber.name}",Toast.LENGTH_LONG).show()
-        catViewModel.initUpdateAndDelete(subscriber)
+        catViewModel.initUpdateAndDelete(cat)
     }
 }

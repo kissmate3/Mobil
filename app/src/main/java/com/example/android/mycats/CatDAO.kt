@@ -7,17 +7,17 @@ import androidx.room.*
 interface CatDAO {
 
     @Insert
-    suspend fun insertSubscriber(cat: Cat) : Long
+    suspend fun insertCat(cat: Cat) : Long
 
     @Update
-    suspend fun updateSubscriber(cat: Cat) : Int
+    suspend fun updateCat(cat: Cat) : Int
 
     @Delete
-    suspend fun deleteSubscriber(cat: Cat) : Int
+    suspend fun deleteCat(cat: Cat) : Int
 
-    @Query("DELETE FROM cat_table")
+    @Query("DELETE FROM cat_table_2")
     suspend fun deleteAll() : Int
 
-    @Query("SELECT * FROM cat_table")
-    fun getAllSubscribers():LiveData<List<Cat>>
+    @Query("SELECT * FROM cat_table_2")
+    fun getAllCats():LiveData<List<Cat>>
 }

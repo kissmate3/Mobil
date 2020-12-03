@@ -13,16 +13,16 @@ import kotlinx.coroutines.launch
 
 class CatViewModel(private val repository: CatRepository) : ViewModel(), Observable {
 
-    val subscribers = repository.subscribers
+    val cats = repository.cats
     private var isUpdateOrDelete = false
-    private lateinit var subscriberToUpdateOrDelete: Cat
+    private lateinit var catToUpdateOrDelete: Cat
 
 
     @Bindable
     val inputName = MutableLiveData<String>()
 
     @Bindable
-    val inputEmail = MutableLiveData<String>()
+    val inputSpecies = MutableLiveData<String>()
 
     @Bindable
     val saveOrUpdateButtonText = MutableLiveData<String>()
@@ -43,22 +43,20 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
     fun saveOrUpdate() {
 
         if (inputName.value == null) {
-            statusMessage.value = Event("Please enter subscriber's name")
-        } else if (inputEmail.value == null) {
-            statusMessage.value = Event("Please enter subscriber's email")
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(inputEmail.value!!).matches()) {
-            statusMessage.value = Event("Please enter a correct email address")
-        } else {
+            statusMessage.value = Event("Please enter the cat name")
+        } else if (inputSpecies.value == null) {
+            statusMessage.value = Event("Please enter the cat species")
+        }  else {
             if (isUpdateOrDelete) {
-                subscriberToUpdateOrDelete.name = inputName.value!!
-                subscriberToUpdateOrDelete.email = inputEmail.value!!
-                update(subscriberToUpdateOrDelete)
+                catToUpdateOrDelete.name = inputName.value!!
+                catToUpdateOrDelete.species = inputSpecies.value!!
+                update(catToUpdateOrDelete)
             } else {
                 val name = inputName.value!!
-                val email = inputEmail.value!!
-                insert(Cat(0, name, email))
+                val species = inputSpecies.value!!
+                insert(Cat(0, name, species))
                 inputName.value = null
-                inputEmail.value = null
+                inputSpecies.value = null
             }
         }
 
@@ -67,7 +65,7 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
 
     fun clearAllOrDelete() {
         if (isUpdateOrDelete) {
-            delete(subscriberToUpdateOrDelete)
+            delete(catToUpdateOrDelete)
         } else {
             clearAll()
         }
@@ -87,7 +85,7 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
         val noOfRows = repository.update(subscriber)
         if (noOfRows > 0) {
             inputName.value = null
-            inputEmail.value = null
+            inputSpecies.value = null
             isUpdateOrDelete = false
             saveOrUpdateButtonText.value = "Save"
             clearAllOrDeleteButtonText.value = "Clear All"
@@ -103,7 +101,7 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
 
         if (noOfRowsDeleted > 0) {
             inputName.value = null
-            inputEmail.value = null
+            inputSpecies.value = null
             isUpdateOrDelete = false
             saveOrUpdateButtonText.value = "Save"
             clearAllOrDeleteButtonText.value = "Clear All"
@@ -123,11 +121,11 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
         }
     }
 
-    fun initUpdateAndDelete(subscriber: Cat) {
-        inputName.value = subscriber.name
-        inputEmail.value = subscriber.email
+    fun initUpdateAndDelete(cat: Cat) {
+        inputName.value = cat.name
+        inputSpecies.value = cat.species
         isUpdateOrDelete = true
-        subscriberToUpdateOrDelete = subscriber
+        catToUpdateOrDelete = cat
         saveOrUpdateButtonText.value = "Update"
         clearAllOrDeleteButtonText.value = "Delete"
 

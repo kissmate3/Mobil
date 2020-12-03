@@ -10,7 +10,7 @@ import com.example.android.mycats.databinding.ListItemBinding
 class MyRecyclerViewAdapter(private val clickListener:(Cat)->Unit)
     : RecyclerView.Adapter<MyViewHolder>()
 {
-    private val subscribersList = ArrayList<Cat>()
+    private val catsList = ArrayList<Cat>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
       val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,16 +20,16 @@ class MyRecyclerViewAdapter(private val clickListener:(Cat)->Unit)
     }
 
     override fun getItemCount(): Int {
-       return subscribersList.size
+       return catsList.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-      holder.bind(subscribersList[position],clickListener)
+      holder.bind(catsList[position],clickListener)
     }
 
-    fun setList(subscribers: List<Cat>) {
-        subscribersList.clear()
-        subscribersList.addAll(subscribers)
+    fun setList(cat: List<Cat>) {
+        catsList.clear()
+        catsList.addAll(cat)
 
     }
 
@@ -37,11 +37,11 @@ class MyRecyclerViewAdapter(private val clickListener:(Cat)->Unit)
 
 class MyViewHolder(private val binding: ListItemBinding):RecyclerView.ViewHolder(binding.root){
 
-    fun bind(subscriber: Cat,clickListener:(Cat)->Unit){
-          binding.nameTextView.text = subscriber.name
-          binding.emailTextView.text = subscriber.email
+    fun bind(cat: Cat,clickListener:(Cat)->Unit){
+          binding.nameTextView.text = cat.name
+          binding.emailTextView.text = cat.species
           binding.listItemLayout.setOnClickListener{
-             clickListener(subscriber)
+             clickListener(cat)
           }
     }
 }
