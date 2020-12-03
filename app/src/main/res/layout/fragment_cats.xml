@@ -28,7 +28,7 @@
 
         <EditText
             android:id="@+id/species_text"
-            android:layout_width="161dp"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginTop="5dp"
@@ -37,6 +37,19 @@
             android:hint="Species"
             android:inputType="textPersonName"
             android:text="@={myViewModel.inputSpecies}"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/age_text"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Age"
+            android:inputType="textPersonName"
+            android:orientation="vertical"
+            android:text="@={myViewModel.inputAge}"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -73,5 +86,6 @@
             android:id="@+id/subscriber_recyclerView"
             android:layout_margin="5dp"
             />
+
     </LinearLayout>
 </layout>

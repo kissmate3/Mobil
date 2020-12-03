@@ -15,7 +15,10 @@ data class Cat (
     var name : String,
 
     @ColumnInfo(name = "species")
-    var species : String
+    var species : String,
+
+    @ColumnInfo(name = "age")
+    var age : String
 
 
 )

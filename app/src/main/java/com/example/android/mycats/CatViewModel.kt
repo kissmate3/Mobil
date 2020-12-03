@@ -25,6 +25,9 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
     val inputSpecies = MutableLiveData<String>()
 
     @Bindable
+    val inputAge = MutableLiveData<String>()
+
+    @Bindable
     val saveOrUpdateButtonText = MutableLiveData<String>()
 
     @Bindable
@@ -54,9 +57,11 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
             } else {
                 val name = inputName.value!!
                 val species = inputSpecies.value!!
-                insert(Cat(0, name, species))
+                val age: String = inputAge.value!!
+                insert(Cat(0, name, species, age))
                 inputName.value = null
                 inputSpecies.value = null
+                inputAge.value=null
             }
         }
 
@@ -86,6 +91,7 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
         if (noOfRows > 0) {
             inputName.value = null
             inputSpecies.value = null
+            inputAge.value = null
             isUpdateOrDelete = false
             saveOrUpdateButtonText.value = "Save"
             clearAllOrDeleteButtonText.value = "Clear All"
@@ -102,6 +108,7 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
         if (noOfRowsDeleted > 0) {
             inputName.value = null
             inputSpecies.value = null
+            inputAge.value = null
             isUpdateOrDelete = false
             saveOrUpdateButtonText.value = "Save"
             clearAllOrDeleteButtonText.value = "Clear All"
@@ -124,6 +131,7 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
     fun initUpdateAndDelete(cat: Cat) {
         inputName.value = cat.name
         inputSpecies.value = cat.species
+        inputAge.value= cat.age
         isUpdateOrDelete = true
         catToUpdateOrDelete = cat
         saveOrUpdateButtonText.value = "Update"

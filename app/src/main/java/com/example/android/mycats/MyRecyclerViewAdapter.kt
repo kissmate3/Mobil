@@ -40,6 +40,7 @@ class MyViewHolder(private val binding: ListItemBinding):RecyclerView.ViewHolder
     fun bind(cat: Cat,clickListener:(Cat)->Unit){
           binding.nameTextView.text = cat.name
           binding.emailTextView.text = cat.species
+          binding.ageTextView.text = cat.age
           binding.listItemLayout.setOnClickListener{
              clickListener(cat)
           }
