@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,7 +23,7 @@ class CatsFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_cats, container, false)
         val application = requireNotNull(this.activity).application
-        val dao = CatDatabase.getInstance(application).CatDAO
+        val dao = CatDatabase.getInstance(application).catDAO
         val repository = CatRepository(dao)
         val factory =  CatViewModelFactory(repository)
         catViewModel = ViewModelProvider(this,factory).get(CatViewModel::class.java)
@@ -35,7 +33,7 @@ class CatsFragment : Fragment() {
 
         catViewModel.message.observe(viewLifecycleOwner, Observer {
             it.getContentIfNotHandled()?.let {
-                //Toast.makeText(, it, Toast.LENGTH_LONG).show()
+
             }
         })
         return binding.root

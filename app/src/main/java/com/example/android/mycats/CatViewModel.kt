@@ -1,7 +1,5 @@
 package com.example.android.mycats
 
-import android.util.Log
-import android.util.Patterns
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
@@ -77,8 +75,8 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
 
     }
 
-    fun insert(subscriber: Cat) = viewModelScope.launch {
-        val newRowId = repository.insert(subscriber)
+    fun insert(cat: Cat) = viewModelScope.launch {
+        val newRowId = repository.insert(cat)
         if (newRowId > -1) {
             statusMessage.value = Event("Subscriber Inserted Successfully $newRowId")
         } else {
@@ -86,8 +84,8 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
         }
     }
 
-    fun update(subscriber: Cat) = viewModelScope.launch {
-        val noOfRows = repository.update(subscriber)
+    fun update(cat: Cat) = viewModelScope.launch {
+        val noOfRows = repository.update(cat)
         if (noOfRows > 0) {
             inputName.value = null
             inputSpecies.value = null
@@ -102,8 +100,8 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
 
     }
 
-    fun delete(subscriber: Cat) = viewModelScope.launch {
-        val noOfRowsDeleted = repository.delete(subscriber)
+    fun delete(cat: Cat) = viewModelScope.launch {
+        val noOfRowsDeleted = repository.delete(cat)
 
         if (noOfRowsDeleted > 0) {
             inputName.value = null

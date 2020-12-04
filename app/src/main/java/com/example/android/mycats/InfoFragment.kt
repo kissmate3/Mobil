@@ -15,7 +15,7 @@ class InfoFragment : Fragment() {
     private lateinit var binding: FragmentInfoBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-         binding = DataBindingUtil.inflate<FragmentInfoBinding>(inflater, R.layout.fragment_info, container, false)
+         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_info, container, false)
          binding.NextButton.setOnClickListener { view: View ->
             view.findNavController().navigate(InfoFragmentDirections.infoToinfo2())
         }

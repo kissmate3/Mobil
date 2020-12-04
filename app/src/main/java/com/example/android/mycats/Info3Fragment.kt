@@ -16,7 +16,7 @@ class Info3Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentInfo3Binding>(inflater, R.layout.fragment_info3, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_info3, container, false)
         binding.FinishButton.setOnClickListener { view: View ->
             view.findNavController().navigate(Info3FragmentDirections.info3Totitlefrag())
         }

@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [Cat::class],version = 3)
 abstract class CatDatabase : RoomDatabase() {
 
-    abstract val  CatDAO: CatDAO
+    abstract val  catDAO: CatDAO
 
     companion object{
         @Volatile
