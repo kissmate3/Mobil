@@ -45,10 +45,10 @@ class CatsFragment : Fragment() {
         binding.subscriberRecyclerView.layoutManager = LinearLayoutManager(context)
         adapter = MyRecyclerViewAdapter { selectedItem: Cat -> listItemClicked(selectedItem) }
         binding.subscriberRecyclerView.adapter = adapter
-        displaySubscribersList()
+        displayCatsList()
     }
 
-    private fun displaySubscribersList(){
+    private fun displayCatsList(){
         catViewModel.cats.observe(viewLifecycleOwner, Observer {
             Log.i("MYTAG",it.toString())
             adapter.setList(it)

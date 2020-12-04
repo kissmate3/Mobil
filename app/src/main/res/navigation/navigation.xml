@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_titleFragment2_to_catsFragment"
             app:destination="@id/catsFragment" />
+        <action
+            android:id="@+id/action_titleFragment2_to_workFragment"
+            app:destination="@id/workFragment" />
     </fragment>
     <fragment
         android:id="@+id/catsFragment"
@@ -31,5 +34,29 @@
         android:id="@+id/info2Fragment"
         android:name="com.example.android.mycats.Info2Fragment"
         android:label="fragment_info2"
-        tools:layout="@layout/fragment_info2" />
+        tools:layout="@layout/fragment_info2" >
+        <action
+            android:id="@+id/info2Toinfo3"
+            app:destination="@id/info3Fragment" />
+        <action
+            android:id="@+id/inf2Toinf"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workFragment"
+        android:name="com.example.android.mycats.WorkFragment"
+        android:label="fragment_work"
+        tools:layout="@layout/fragment_work" />
+    <fragment
+        android:id="@+id/info3Fragment"
+        android:name="com.example.android.mycats.Info3Fragment"
+        android:label="fragment_info3"
+        tools:layout="@layout/fragment_info3" >
+        <action
+            android:id="@+id/info3Totitlefrag"
+            app:destination="@id/titleFragment2" />
+        <action
+            android:id="@+id/inf3toinf2"
+            app:destination="@id/info2Fragment" />
+    </fragment>
 </navigation>

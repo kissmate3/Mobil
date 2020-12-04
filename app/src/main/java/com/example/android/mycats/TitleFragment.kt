@@ -17,6 +17,9 @@ class TitleFragment : Fragment() {
         binding.catsButton.setOnClickListener { view: View ->
             view.findNavController().navigate(TitleFragmentDirections.actionTitleFragment2ToCatsFragment())
         }
+        binding.workButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(TitleFragmentDirections.actionTitleFragment2ToWorkFragment())
+        }
         setHasOptionsMenu(true)
         return binding.root
     }
