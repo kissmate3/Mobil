@@ -10,13 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
+
+        android:background="#B0E0E6"
         android:orientation="vertical"
         tools:context=".MainActivity" >
 
         <EditText
             android:id="@+id/name_text"
-            android:layout_width="155dp"
+            android:layout_width="356dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginBottom="5dp"
@@ -28,7 +29,7 @@
 
         <EditText
             android:id="@+id/species_text"
-            android:layout_width="154dp"
+            android:layout_width="356dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginTop="5dp"
@@ -65,11 +66,13 @@
                 android:text="@={myViewModel.saveOrUpdateButtonText}"
                 android:onClick="@{()->myViewModel.saveOrUpdate()}"
                 android:textSize="18sp"
+                android:layout_margin="10dp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/clear_all_or_delete_button"
                 android:layout_width="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@={myViewModel.clearAllOrDeleteButtonText}"
@@ -84,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/subscriber_recyclerView"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             />
 
     </LinearLayout>
