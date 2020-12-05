@@ -1,4 +1,4 @@
-package com.example.android.mycats
+package com.example.android.mycats.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

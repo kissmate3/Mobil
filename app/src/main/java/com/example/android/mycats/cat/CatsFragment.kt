@@ -1,4 +1,4 @@
-package com.example.android.mycats
+package com.example.android.mycats.cat
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android.mycats.*
+import com.example.android.mycats.database.Cat
+import com.example.android.mycats.database.CatDatabase
 import com.example.android.mycats.databinding.FragmentCatsBinding
 
 class CatsFragment : Fragment() {

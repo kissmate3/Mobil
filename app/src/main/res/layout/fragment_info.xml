@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:fillViewport="true"
-    tools:context="com.example.android.mycats.InfoFragment">
+    tools:context="com.example.android.mycats.info.InfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

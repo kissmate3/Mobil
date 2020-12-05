@@ -1,11 +1,14 @@
-package com.example.android.mycats
+package com.example.android.mycats.cat
 
+import android.content.Context
+import android.widget.Toast
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.android.mycats.database.Cat
 import kotlinx.coroutines.launch
 
 

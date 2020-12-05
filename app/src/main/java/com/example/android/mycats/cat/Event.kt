@@ -1,4 +1,4 @@
-package com.example.android.mycats
+package com.example.android.mycats.cat
 
 open class Event<out T>(private val content: T) {
 

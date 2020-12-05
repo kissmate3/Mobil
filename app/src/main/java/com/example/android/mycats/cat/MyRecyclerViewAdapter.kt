@@ -1,10 +1,12 @@
-package com.example.android.mycats
+package com.example.android.mycats.cat
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.mycats.R
+import com.example.android.mycats.database.Cat
 import com.example.android.mycats.databinding.ListItemBinding
 
 class MyRecyclerViewAdapter(private val clickListener:(Cat)->Unit)
@@ -15,7 +17,7 @@ class MyRecyclerViewAdapter(private val clickListener:(Cat)->Unit)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
       val layoutInflater = LayoutInflater.from(parent.context)
       val binding : ListItemBinding =
-          DataBindingUtil.inflate(layoutInflater,R.layout.list_item,parent,false)
+          DataBindingUtil.inflate(layoutInflater, R.layout.list_item,parent,false)
       return MyViewHolder(binding)
     }
 
@@ -37,7 +39,7 @@ class MyRecyclerViewAdapter(private val clickListener:(Cat)->Unit)
 
 class MyViewHolder(private val binding: ListItemBinding):RecyclerView.ViewHolder(binding.root){
 
-    fun bind(cat: Cat,clickListener:(Cat)->Unit){
+    fun bind(cat: Cat, clickListener:(Cat)->Unit){
           binding.nameTextView.text = cat.name
           binding.emailTextView.text = cat.species
           binding.ageTextView.text = cat.age

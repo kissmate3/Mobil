@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/catsFragment"
-        android:name="com.example.android.mycats.CatsFragment"
+        android:name="com.example.android.mycats.cat.CatsFragment"
         android:label="fragment_cats"
         tools:layout="@layout/fragment_cats" />
     <fragment
         android:id="@+id/infoFragment"
-        android:name="com.example.android.mycats.InfoFragment"
+        android:name="com.example.android.mycats.info.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/info2Fragment"
-        android:name="com.example.android.mycats.Info2Fragment"
+        android:name="com.example.android.mycats.info.Info2Fragment"
         android:label="fragment_info2"
         tools:layout="@layout/fragment_info2" >
         <action
@@ -44,17 +44,18 @@
     </fragment>
     <fragment
         android:id="@+id/workFragment"
-        android:name="com.example.android.mycats.WorkFragment"
+        android:name="com.example.android.mycats.work.WorkFragment"
         android:label="fragment_work"
         tools:layout="@layout/fragment_work" >
-        <argument
-            android:name="number"
-            app:argType="integer"
-            android:defaultValue="2" />
+        <action
+            android:id="@+id/action_sleepTrackerFragment_to_sleepQualityFragment"
+            app:destination="@id/workTypeFragment"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/info3Fragment"
-        android:name="com.example.android.mycats.Info3Fragment"
+        android:name="com.example.android.mycats.info.Info3Fragment"
         android:label="fragment_info3"
         tools:layout="@layout/fragment_info3" >
         <action
@@ -63,5 +64,16 @@
         <action
             android:id="@+id/inf3toinf2"
             app:destination="@id/info2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workTypeFragment"
+        android:name="com.example.android.mycats.work.WorkTypeFragment"
+        android:label="WorkTypeFragment" >
+        <argument
+            android:name="sleepNightKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_sleepQualityFragment_to_sleepTrackerFragment"
+            app:destination="@id/workFragment" />
     </fragment>
 </navigation>

@@ -1,4 +1,7 @@
-package com.example.android.mycats
+package com.example.android.mycats.cat
+
+import com.example.android.mycats.database.Cat
+import com.example.android.mycats.database.CatDAO
 
 class CatRepository(private val dao : CatDAO) {
 

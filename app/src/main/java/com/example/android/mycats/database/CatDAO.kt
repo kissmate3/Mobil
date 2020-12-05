@@ -1,7 +1,8 @@
-package com.example.android.mycats
+package com.example.android.mycats.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.android.mycats.database.Cat
 
 @Dao
 interface CatDAO {

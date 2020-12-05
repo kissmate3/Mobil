@@ -1,4 +1,4 @@
-package com.example.android.mycats
+package com.example.android.mycats.database
 
 import android.content.Context
 import androidx.room.Database
@@ -13,7 +13,7 @@ abstract class CatDatabase : RoomDatabase() {
     companion object{
         @Volatile
         private var INSTANCE : CatDatabase? = null
-        fun getInstance(context: Context):CatDatabase{
+        fun getInstance(context: Context): CatDatabase {
             synchronized(this){
                 var instance = INSTANCE
                 if(instance==null){
