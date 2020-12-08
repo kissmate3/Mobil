@@ -21,4 +21,5 @@ interface CatDAO {
 
     @Query("SELECT * FROM cat_table_2")
     fun getAllCats():LiveData<List<Cat>>
+
 }

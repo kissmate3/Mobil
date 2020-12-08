@@ -51,6 +51,9 @@
             android:id="@+id/action_sleepTrackerFragment_to_sleepQualityFragment"
             app:destination="@id/workTypeFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/workToDetails"
+            app:destination="@id/workDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/info3Fragment"
@@ -78,5 +81,17 @@
             app:destination="@id/workFragment"
             app:popUpTo="@id/workFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/workDetailFragment"
+        android:name="com.example.android.mycats.work.WorkDetailFragment"
+        android:label="WorkDetailFragment" >
+        <action
+            android:id="@+id/detailTotracker"
+            app:destination="@id/workFragment"
+            app:popUpTo="@id/workFragment" />
+        <argument
+            android:name="sleepNightKey"
+            app:argType="long" />
     </fragment>
 </navigation>
