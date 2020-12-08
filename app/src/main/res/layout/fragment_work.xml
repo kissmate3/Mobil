@@ -13,6 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#B0E0E6"
         tools:context=".sleeptracker.SleepTrackerFragment">
 
 
@@ -31,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:background="#4682B4"
             android:enabled="@{workViewModel.startButtonVisible}"
             android:onClick="@{() -> workViewModel.onStart()}"
             android:text="@string/start"
@@ -43,6 +45,7 @@
             android:id="@+id/stop_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#4682B4"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:enabled="@{workViewModel.stopButtonVisible}"
@@ -58,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:background="#4682B4"
             android:layout_marginBottom="16dp"
             android:enabled="@{workViewModel.clearButtonVisible}"
             android:onClick="@{() -> workViewModel.onClear()}"

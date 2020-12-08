@@ -50,8 +50,7 @@
         <action
             android:id="@+id/action_sleepTrackerFragment_to_sleepQualityFragment"
             app:destination="@id/workTypeFragment"
-            app:popUpTo="@id/navigation"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/info3Fragment"
@@ -60,7 +59,9 @@
         tools:layout="@layout/fragment_info3" >
         <action
             android:id="@+id/info3Totitlefrag"
-            app:destination="@id/titleFragment2" />
+            app:destination="@id/titleFragment2"
+            app:popUpTo="@id/titleFragment2"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/inf3toinf2"
             app:destination="@id/info2Fragment" />
@@ -74,6 +75,8 @@
             app:argType="long" />
         <action
             android:id="@+id/action_sleepQualityFragment_to_sleepTrackerFragment"
-            app:destination="@id/workFragment" />
+            app:destination="@id/workFragment"
+            app:popUpTo="@id/workFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
