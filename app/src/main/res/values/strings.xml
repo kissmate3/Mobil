@@ -13,6 +13,7 @@
     <string name="help1">Segítség:</string>
     <string name="help2">Cats: Ezen a felületen tudja kezelni a macskáit. Tud egy új macskát felvenni az adatbázisába, vagy egy meglévő macska adatait frissíteni vagy törölni. Egy macska hozzáadásánál három információt lehet megadni: név, fajta, kor. Egyiket sem kötelező megadni, csak legalább egyet. De az macskák számontartása érdekében ajánlott mind a három információt megadni. </string>
     <string name="help3">Bármilyen próbléma adódott vagy szeretne kérdést feltenni keressen minket az alábbi elérhetőségeken:</string>
+    <string name="help4">Works: Ezen a felületen a macskákkal végzett munkákat és a munkavégzés idejét tudja menteni</string>
     <string name="inf">mycats@inf.com</string>
 
     <string name="start">Start</string>

@@ -89,7 +89,8 @@
         <action
             android:id="@+id/detailTotracker"
             app:destination="@id/workFragment"
-            app:popUpTo="@id/workFragment" />
+            app:popUpTo="@id/workFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="sleepNightKey"
             app:argType="long" />
