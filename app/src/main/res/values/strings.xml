@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">MyCats</string>
     <string name="position">Position</string>
-    <string name="select_an_avatar">Select an Avatar</string>
-    <string name="android_trivia">Android Trivia</string>
-    <string name="about_text">Android Trivia will help remind you of important concepts you have learned and will learn in Android development.\n\nConsider modifying the questions and graphics to make this game your own!</string>
-    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
-
+    <string name="main_activity_title">MyCats</string>
+    <string name="main_activity_info">Info</string>
+    <string name="main_activity_cats">Cats</string>
+    <string name="main_activity_work">Work</string>
 
     <string name="info">Üdvözlöm a MyCats alkalmazásban</string>
     <string name="info2">Az alkalmazás a Mobil alkalmazásfejlesztés kurzusra készült</string>
@@ -21,20 +20,19 @@
     <string name="clear">Clear</string>
 
 
-    <string name="title"><![CDATA[<h3>HERE IS YOUR SLEEP DATA</h3>]]></string>
+    <string name="title"><![CDATA[<h3>HERE IS YOUR WORK DATA</h3>]]></string>
     <string name="start_time"><![CDATA[<b>Start:</b>]]></string>
     <string name="end_time"><![CDATA[<b>End:</b>]]></string>
-    <string name="quality"><![CDATA[<b>Quality:</b>]]></string>
+    <string name="quality"><![CDATA[<b>Type:</b>]]></string>
     <string name="hours_slept"><![CDATA[<b>Hours:Minutes:Seconds</b>]]></string>
 
-    <!-- Sleep quality strings -->
-    <string name="how_was_hour_sleep">How was your sleep?</string>
-    <string name="zero_very_bad">walking</string>
-    <string name="one_poor">feeding</string>
-    <string name="two_soso">healing</string>
-    <string name="three_ok">playing</string>
-    <string name="four_pretty_good">paper work</string>
-    <string name="five_excellent">buying</string>
+
+    <string name="walking">walking</string>
+    <string name="feeding">feeding</string>
+    <string name="healing">healing</string>
+    <string name="playing">playing</string>
+    <string name="paper_work">paper work</string>
+    <string name="buying">buying</string>
 
     <string name="cleared_message">All your data is gone forever.</string>
 
@@ -42,7 +40,4 @@
     <string name="hours_length">%d hours on %s</string>
     <string name="seconds_length">%d seconds on %s</string>
 
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

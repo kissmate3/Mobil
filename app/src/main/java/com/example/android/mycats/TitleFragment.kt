@@ -22,6 +22,7 @@ class TitleFragment : Fragment() {
             view.findNavController().navigate(action)
         }
         setHasOptionsMenu(true)
+        (activity as MainActivity).supportActionBar?.title = getString(R.string.main_activity_title)
         return binding.root
     }
 

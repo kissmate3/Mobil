@@ -74,7 +74,7 @@
         android:name="com.example.android.mycats.work.WorkTypeFragment"
         android:label="WorkTypeFragment" >
         <argument
-            android:name="sleepNightKey"
+            android:name="WorkKey"
             app:argType="long" />
         <action
             android:id="@+id/action_sleepQualityFragment_to_sleepTrackerFragment"
@@ -92,7 +92,7 @@
             app:popUpTo="@id/workFragment"
             app:popUpToInclusive="true" />
         <argument
-            android:name="sleepNightKey"
+            android:name="WorkKey"
             app:argType="long" />
     </fragment>
 </navigation>

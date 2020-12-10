@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.example.android.mycats.MainActivity
 import com.example.android.mycats.R
 
 import com.example.android.mycats.databinding.FragmentInfo3Binding
@@ -24,6 +25,7 @@ class Info3Fragment : Fragment() {
         binding.Back2Button.setOnClickListener { view: View ->
             view.findNavController().navigate(Info3FragmentDirections.inf3toinf2())
         }
+        (activity as MainActivity).supportActionBar?.title = getString(R.string.main_activity_info)
         return binding.root
     }
 }

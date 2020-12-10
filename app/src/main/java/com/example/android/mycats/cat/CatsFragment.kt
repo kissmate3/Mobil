@@ -39,13 +39,14 @@ class CatsFragment : Fragment() {
 
             }
         })
+        (activity as MainActivity).supportActionBar?.title = getString(R.string.main_activity_cats)
         return binding.root
     }
 
     private fun initRecyclerView(){
-        binding.subscriberRecyclerView.layoutManager = LinearLayoutManager(context)
+        binding.catRecyclerView.layoutManager = LinearLayoutManager(context)
         adapter = MyRecyclerViewAdapter { selectedItem: Cat -> listItemClicked(selectedItem) }
-        binding.subscriberRecyclerView.adapter = adapter
+        binding.catRecyclerView.adapter = adapter
         displayCatsList()
     }
 
@@ -58,7 +59,6 @@ class CatsFragment : Fragment() {
     }
 
     private fun listItemClicked(cat: Cat){
-        //Toast.makeText(this,"selected name is ${subscriber.name}",Toast.LENGTH_LONG).show()
         catViewModel.initUpdateAndDelete(cat)
     }
 }

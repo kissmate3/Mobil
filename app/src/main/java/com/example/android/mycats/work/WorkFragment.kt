@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.android.mycats.MainActivity
 import com.example.android.mycats.R
 import com.example.android.mycats.database.WorkDatabase
 import com.example.android.mycats.databinding.FragmentWorkBinding
@@ -34,30 +35,28 @@ class WorkFragment : Fragment() {
         ViewModelProvider(
             this, viewModelFactory).get(WorkViewModel::class.java)
 
-    // To use the View Model with data binding, you have to explicitly
-    // give the binding object a reference to it.
+
     binding.workViewModel = workViewModel
 
-        val adapter = WorkAdapter(SleepNightListener { workId ->
-            workViewModel.onSleepNightClicked(workId!!)
+        val adapter = WorkAdapter(WorkListener { workId ->
+            workViewModel.onWorkClicked(workId!!)
         })
-        binding.sleepList.adapter = adapter
+        binding.workList.adapter = adapter
 
-        workViewModel.nights.observe(viewLifecycleOwner, Observer {
+        workViewModel.works.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.addHeaderAndSubmitList(it)
             }
         })
 
-        workViewModel.navigateToSleepDetail.observe(viewLifecycleOwner, Observer { night ->
+        workViewModel.navigateToWorkDetail.observe(viewLifecycleOwner, Observer { night ->
             night?.let {
                 this.findNavController().navigate(WorkFragmentDirections.workToDetails(night))
-                workViewModel.onSleepDetailNavigated()
+                workViewModel.onWorkDetailNavigated()
             }
         })
 
     binding.setLifecycleOwner(this)
-
 
 
 
@@ -73,8 +72,7 @@ class WorkFragment : Fragment() {
         }
     })
 
-
-        workViewModel.navigateToSleepQuality.observe(viewLifecycleOwner, Observer { night ->
+        workViewModel.navigateToWorkType.observe(viewLifecycleOwner, Observer { night ->
         night?.let {
 
             this.findNavController().navigate(
@@ -93,7 +91,8 @@ class WorkFragment : Fragment() {
             }
 
         }
-        binding.sleepList.layoutManager = manager
+        binding.workList.layoutManager = manager
+        (activity as MainActivity).supportActionBar?.title = getString(R.string.main_activity_work)
     return binding.root
 }
 }

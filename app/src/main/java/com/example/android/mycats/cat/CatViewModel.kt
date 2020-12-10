@@ -81,9 +81,9 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
     fun insert(cat: Cat) = viewModelScope.launch {
         val newRowId = repository.insert(cat)
         if (newRowId > -1) {
-            statusMessage.value = Event("Subscriber Inserted Successfully $newRowId")
+            statusMessage.value = Event("Cats Inserted Successfully $newRowId")
         } else {
-            statusMessage.value = Event("Error Occurred")
+            statusMessage.value = Event("Error ")
         }
     }
 
@@ -96,9 +96,9 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
             isUpdateOrDelete = false
             saveOrUpdateButtonText.value = "Save"
             clearAllOrDeleteButtonText.value = "Clear All"
-            statusMessage.value = Event("$noOfRows Row Updated Successfully")
+            statusMessage.value = Event("$noOfRows Row Updated ")
         } else {
-            statusMessage.value = Event("Error Occurred")
+            statusMessage.value = Event("Error")
         }
 
     }
@@ -113,9 +113,9 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
             isUpdateOrDelete = false
             saveOrUpdateButtonText.value = "Save"
             clearAllOrDeleteButtonText.value = "Clear All"
-            statusMessage.value = Event("$noOfRowsDeleted Row Deleted Successfully")
+            statusMessage.value = Event("$noOfRowsDeleted Row Deleted ")
         } else {
-            statusMessage.value = Event("Error Occurred")
+            statusMessage.value = Event("Error")
         }
 
     }
@@ -123,9 +123,9 @@ class CatViewModel(private val repository: CatRepository) : ViewModel(), Observa
     fun clearAll() = viewModelScope.launch {
         val noOfRowsDeleted = repository.deleteAll()
         if (noOfRowsDeleted > 0) {
-            statusMessage.value = Event("$noOfRowsDeleted Subscribers Deleted Successfully")
+            statusMessage.value = Event("$noOfRowsDeleted Cat Deleted ")
         } else {
-            statusMessage.value = Event("Error Occurred")
+            statusMessage.value = Event("Error ")
         }
     }
 
